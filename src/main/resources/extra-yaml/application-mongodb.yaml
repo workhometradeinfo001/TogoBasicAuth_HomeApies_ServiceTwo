@@ -1,0 +1,4 @@
+spring:
+  mongodb:
+    uri: mongodb+srv://workhometradeinfo001:smorohJ5jyzEGFtL@cluster0.xqf11qr.mongodb.net/?appName=Cluster0
+    database: TogoUserRegistrationData

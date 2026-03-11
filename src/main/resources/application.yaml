@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: HomeApies
+  profiles:
+      active: dev, mysql, mongodb
+  config:
+    import: "optional:classpath:extra-yaml/"
+
+
+
+
+
