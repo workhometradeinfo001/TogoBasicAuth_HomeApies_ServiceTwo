@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.togo.homeapies.entities.AbstractGlobalEntity;
+import org.togo.homeapies.entities.AbstractUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 
 @Entity
@@ -18,7 +18,7 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmailEntity extends AbstractGlobalEntity<Long> {
+public class EmailEntity extends AbstractUserEntity<Long> {
 
     private String email;
 

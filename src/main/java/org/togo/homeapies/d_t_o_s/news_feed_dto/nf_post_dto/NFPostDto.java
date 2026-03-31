@@ -4,8 +4,10 @@ import lombok.Data;
 
 @Data
 public class NFPostDto {
-
     private String postText;
     private String imgUrl;
+<<<<<<< HEAD
     private long userId;
+=======
+>>>>>>> d2b5cde (added craete post, exchange access token with refresh_token)
 }

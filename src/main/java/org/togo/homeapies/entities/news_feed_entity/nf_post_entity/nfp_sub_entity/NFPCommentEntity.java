@@ -22,8 +22,7 @@ public class NFPCommentEntity extends AbstractGlobalEntity<Long> {
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     private NFPostEntity nfComment;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "who_made_comment", referencedColumnName = "id")
-    private UserEntity userEntity;
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "who_made_comment", referencedColumnName = "id")
+//    private UserEntity userEntity;
 }

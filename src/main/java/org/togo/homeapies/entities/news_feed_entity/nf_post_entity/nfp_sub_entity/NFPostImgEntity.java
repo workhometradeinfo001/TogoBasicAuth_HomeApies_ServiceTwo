@@ -26,8 +26,8 @@ public class NFPostImgEntity extends AbstractGlobalEntity<Long> {
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     private NFPostEntity nfPostImg;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "who_post", referencedColumnName = "id")
-    private UserEntity userEntity;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "who_post", referencedColumnName = "id")
+//    private UserEntity userEntity;
 
 }

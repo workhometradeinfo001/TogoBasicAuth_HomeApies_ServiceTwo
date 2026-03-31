@@ -35,9 +35,13 @@ public class NFPostService {
         //PostText field....
         textEntity.setPostText(postDto.getPostText());
         textEntity.setNfPostText(postEntity);
+<<<<<<< HEAD
         textEntity.setUserEntity(postEntity.getUserEntity());
         textEntity.setUpdateAt(postEntity.getUpdateAt());
         textEntity.setCreateAt(postEntity.getCreateAt());
+=======
+//        textEntity.setUserEntity(postEntity.getUserEntity());
+>>>>>>> d2b5cde (added craete post, exchange access token with refresh_token)
         postTextRepo.save(textEntity);
     }
     public void savePostImgViaService(NFPostDto postDto, NFPostEntity postEntity) throws MalformedURLException {
@@ -47,9 +51,13 @@ public class NFPostService {
         //ImageEntity field
         imgEntity.setPostImg(imgBytes);
         imgEntity.setNfPostImg(postEntity);
+<<<<<<< HEAD
         imgEntity.setUserEntity(postEntity.getUserEntity());
         imgEntity.setCreateAt(postEntity.getCreateAt());
         imgEntity.setUpdateAt(postEntity.getUpdateAt());
+=======
+//        imgEntity.setUserEntity(postEntity.getUserEntity());
+>>>>>>> d2b5cde (added craete post, exchange access token with refresh_token)
         postImgRepo.save(imgEntity);
     }
     public byte[] urlToLongBlobImg(String image) throws MalformedURLException{

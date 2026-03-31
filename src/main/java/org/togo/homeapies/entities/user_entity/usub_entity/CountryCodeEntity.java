@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.togo.homeapies.entities.AbstractGlobalEntity;
+import org.togo.homeapies.entities.AbstractUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 
 @Entity
@@ -17,7 +18,7 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CountryCodeEntity extends AbstractGlobalEntity<Long> {
+public class CountryCodeEntity extends AbstractUserEntity<Long> {
 
     private String countryCode;
 
