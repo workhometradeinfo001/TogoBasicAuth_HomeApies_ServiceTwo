@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.togo.homeapies.entities.AbstractGlobalEntity;
+import org.togo.homeapies.entities.AbstractUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 
 @Entity
@@ -13,12 +14,12 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MUIdEntity extends AbstractGlobalEntity<Long> {
+public class MUIdEntity extends AbstractUserEntity<Long> {
 
     private String mongoUserId;
 
     @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "mysql_user_id", referencedColumnName = "id")
     private UserEntity userIdFromMongo;
 
 }

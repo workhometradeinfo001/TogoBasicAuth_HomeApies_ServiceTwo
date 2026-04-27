@@ -10,6 +10,4 @@ public interface MysqlUserRepo extends GlobalRepo<UserEntity, Long> {
 
    Optional<UserEntity> findById(long id);
 
-    @Override
-    <S extends UserEntity> S save(S entity);
 }

@@ -27,8 +27,7 @@ public class NFPLikeEntity extends AbstractGlobalEntity<Long> {
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     private NFPostEntity nfPostLike;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "who_liked", referencedColumnName = "id")
-    private UserEntity userEntity;
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "who_liked", referencedColumnName = "id")
+//    private UserEntity userEntity;
 }

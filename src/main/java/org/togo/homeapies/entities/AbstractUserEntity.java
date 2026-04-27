@@ -1,7 +1,12 @@
 package org.togo.homeapies.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+import org.jspecify.annotations.Nullable;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -13,16 +18,17 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter @Setter
+@SuperBuilder
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AbstractGlobalEntity<T extends Serializable> implements Persistable<T> {
+public class AbstractUserEntity<ID extends Serializable> implements Persistable<ID> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "BIGINT")
-    private T id;
+    private ID id;
 
     @CreatedDate
     @Column(updatable = false, nullable = false)
@@ -32,16 +38,31 @@ public abstract class AbstractGlobalEntity<T extends Serializable> implements Pe
     private LocalDateTime updateAt;
 
     @CreatedBy
-    private Long whoCreated;
+    @Column(columnDefinition = "BIGINT")
+    protected Long createBy;
 
     @LastModifiedBy
-    private Long whoModify;
+    @Column(columnDefinition = "BIGINT")
+    protected Long updateBy;
+
+    @PostPersist
+    public void setCreateBy(){
+        createBy = (Long) this.id;
+        updateBy = (Long) this.id;
+    }
+    @PostUpdate
+    public void setUpdateBy(){
+        updateBy = (Long) this.id;
+    }
+    @Transient
+    @Override
+    public @Nullable ID getId() {
+        return null;
+    }
 
     @Transient
     @Override
-    public boolean isNew(){
-        return id == null;
+    public boolean isNew() {
+        return false;
     }
-
-
 }

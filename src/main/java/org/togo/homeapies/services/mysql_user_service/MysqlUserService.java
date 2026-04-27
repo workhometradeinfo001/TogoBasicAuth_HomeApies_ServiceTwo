@@ -1,17 +1,17 @@
 package org.togo.homeapies.services.mysql_user_service;
 
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.togo.homeapies.d_t_o_s.user_dto.UserDto;
-import org.togo.homeapies.entities.mongo_ue.MongoUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 import org.togo.homeapies.entities.user_entity.usub_entity.*;
 import org.togo.homeapies.repos.user_repo.mysql_repo.MysqlEmailRepo;
 import org.togo.homeapies.repos.user_repo.mysql_repo.MysqlUserRepo;
-
 import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -46,6 +46,7 @@ public class MysqlUserService {
             }
         }catch (Exception e){
             log.error("Data can't transfer!", e);
+            e.printStackTrace();
             return false;
         }
     }
@@ -77,5 +78,8 @@ public class MysqlUserService {
         user.setFullName(fullName);
     }
 
+    public Long getUserIdFromMysql(String email){
+        return mysqlEmailRepo.findUserIdViaEmail(email);
+    }
 
 }

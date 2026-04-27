@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.togo.homeapies.entities.AbstractGlobalEntity;
+import org.togo.homeapies.entities.AbstractUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 
 @Entity
@@ -18,7 +19,7 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PasswordEntity extends AbstractGlobalEntity<Long> {
+public class PasswordEntity extends AbstractUserEntity<Long> {
 
     private String password;
 

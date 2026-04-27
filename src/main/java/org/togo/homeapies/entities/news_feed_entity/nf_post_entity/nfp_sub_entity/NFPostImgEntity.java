@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.togo.homeapies.entities.AbstractGlobalEntity;
 import org.togo.homeapies.entities.news_feed_entity.nf_post_entity.NFPostEntity;
-import org.togo.homeapies.entities.user_entity.UserEntity;
 
 
 @Entity
@@ -18,16 +17,11 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 public class NFPostImgEntity extends AbstractGlobalEntity<Long> {
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
-    private byte[] postImg;
-
+    @Column(columnDefinition = "LONGTEXT")
+    private String postImg;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     private NFPostEntity nfPostImg;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "who_post", referencedColumnName = "id")
-    private UserEntity userEntity;
 
 }

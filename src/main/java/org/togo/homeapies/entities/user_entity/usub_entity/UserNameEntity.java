@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.togo.homeapies.entities.AbstractGlobalEntity;
+import org.togo.homeapies.entities.AbstractUserEntity;
 import org.togo.homeapies.entities.user_entity.UserEntity;
 
 @Entity
@@ -18,10 +19,9 @@ import org.togo.homeapies.entities.user_entity.UserEntity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserNameEntity extends AbstractGlobalEntity<Long> {
+public class UserNameEntity extends AbstractUserEntity<Long> {
 
     private String userName;
-
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserEntity userUserName;
